@@ -8,7 +8,7 @@ from insect_api import get_insect_detections
 st.header("Insect Counting and Detection Demo 🦟🟨")
 st.write(
     """
-    This is a demo of our API for detecting and counting insects, based on  state-of-the-art Deep Learning detection algorithms 🤖.
+    This is a demo of our API for detecting and counting insects on sticky traps, based on  state-of-the-art Deep Learning detection algorithms 🤖.
     This AI is able to detect white insects ⬜, small, and big ones. Also, the model is able to detect insects with high precision 🎯 regardless of the image resolution (it works with 
     pictures from smartphones too 📱).
     """)
@@ -76,6 +76,8 @@ if uploaded_file is not None:
         label2="Processed",
     )
 
+st.write('##')
+st.write('##')
 st.write('##')
 st.write('##')
 st.write('##')
