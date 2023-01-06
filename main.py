@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from streamlit_image_comparison import image_comparison
 from PIL import Image
 import requests
@@ -18,9 +19,11 @@ image_comparison(
     img2="data/c.JPG",
     label1="Original",
     label2="Processed",
+    in_memory=True,
+    make_responsive=True
 )
 # image_comparison(img1="data/a1.jpg", img2="data/a2.jpg", width=300)
-
+st.write(' ')
 st.subheader("Try it out!")
 st.write("Upload your yellow sticky trap image with insects (or try a sample image):")
 with open("data/sample_img.jpg", "rb") as file:
@@ -74,20 +77,21 @@ if uploaded_file is not None:
         img2=processed_url,
         label1="Original",
         label2="Processed",
+        in_memory=True,
+        make_responsive=True
     )
 
-st.write('##')
-st.write('##')
-st.write('##')
-st.write('##')
-st.write('##')
+for _ in range(20):
+    st.write(' ')
+
 c1, c2 = st.columns([1, 5])
+c1.image('data/logo.png', width=100)
 c2.write(
     """
     Find us at www.uolabs.tech!
-    
+
     Contact us for more information: contact@uolabs.tech
-    
+
     UoLabs Technology
     """)
-c1.image('data/logo.png', width=100)
+
